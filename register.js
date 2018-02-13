@@ -1,5 +1,4 @@
 exports.register = function(req,res){
-  // console.log("req",req.body);
   var today = new Date();
   var users={
     "first_name":req.body.first_name,
@@ -11,29 +10,18 @@ exports.register = function(req,res){
   }
   connection.query('INSERT INTO users SET ?',users, function (error, results, fields) {
   if (error) {
-    console.log("error ocurred",error);
+    console.log("error..",error);
     res.send({
       "code":400,
-      "failed":"error ocurred"
+      "failed":"error"
     })
   }else{
-    console.log('The solution is: ', results);
+    console.log('solution ', results);
     res.send({
       "code":200,
-      "success":"user registered sucessfully"
+      "success":"User sucessfully registered"
         });
   }
   });
 }
-bcrypt.hash(req.body.password, 5, function( err, bcryptedPassword) {
-   
-   var users={
-     "first_name":req.body.first_name,
-     "last_name":req.body.last_name,
-     "email":req.body.email,
-     "password":bcryptedPassword,
-     "created":today,
-     "modified":today
-   }
-   ...
-  });
+
