@@ -8,7 +8,7 @@ connection.query('SELECT * FROM users WHERE email = ?',[email], function (error,
         if (doesMatch){
      res.send({
        "code":200,
-       "success":"login sucessfull"
+       "success":"login sucessful"
          });
       }
       else{
@@ -20,6 +20,7 @@ connection.query('SELECT * FROM users WHERE email = ?',[email], function (error,
     });
     }
     else{
+      console.log("Invalid input");
     }
   }
   });
