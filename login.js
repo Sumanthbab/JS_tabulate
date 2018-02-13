@@ -14,7 +14,7 @@ exports.login = function(req,res){
       if([0].password == password){
         res.send({
           "code":200,
-          "success":"login sucessfull"
+          "success":"login sucessful"
             });
       }
       else{
@@ -27,7 +27,7 @@ exports.login = function(req,res){
     else{
       res.send({
         "code":204,
-        "success":"Email does not exits"
+        "success":"Email does not exist"
           });
     }
   }
